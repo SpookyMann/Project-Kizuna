@@ -4,19 +4,18 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="icon" href="https://cdn.glitch.com/0d391b41-a8bd-4502-b08c-04de19873d8c%2Ffavicon%20(1).ico?v=1576621322526" type="icon">
     <meta charset="utf-8" />
+    <meta name="description" content="A Simple Anime List">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kizuna 絆</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
     <link rel="manifest" href="/manifest.json">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="Kizuna PWA">
     <link rel="apple-touch-icon" href="/images/apple-icon-152x152.png">
+    <meta name="theme-color" content="#2F3BA2" >
     <link
       rel="icon"
       href="https://cdn.glitch.com/771216db-f4aa-4bae-85e5-b7477b7aa16e%2Ffavicon%20(1).ico?v=1574887520258"
@@ -27,8 +26,8 @@
     <div class="topnav">
       <a class="active"><strong>KIZUNA</strong> <strong id="kiz">絆</strong></a>
       <div class="search-container">
-        <input type="text" id="input" placeholder="Anime..." />
-        <button id="button"><i class="fa fa-search"></i></button>
+        <input type="text" id="search-input" aria-label="text-input" placeholder="Anime..." />
+        <button id="search-button" aria-label="search-button"><img id="search-but" src="https://cdn.glitch.com/9951a252-043b-4b8f-8089-3bb49843c31e%2Fsearch.png?v=1576623136310" alt="search button"></button>
       </div>
     </div>
 
@@ -36,8 +35,8 @@
     
     </div>
 
-  
-    
+    <!--grid-container-->
+    <script src="addserviceworker.js"></script>
     <script src="client.js"></script>
   </body>
 </html>

@@ -57,6 +57,12 @@ body {
   background: #ccc;
 }
 
+#search-but {
+  margin-top: 3px;
+  margin-buttom: 0;
+  width: 14px;
+}
+
 #kiz {
   color: #F09233;
   font-size: 20px;
@@ -131,12 +137,12 @@ body {
   justify-items: center;
 }
 
-#underline > h4 {
+.underline > h4 {
   text-decoration: underline;
   text-decoration-color: #3EB489;
 }
 
-#col {
+.col {
   color: #3EB489;
 }
 
@@ -149,7 +155,7 @@ hr {
   padding: 0;
 }
 
-#button {
+#search-button {
   display: inline-block;
   border: none;
   padding: 10px;
@@ -164,17 +170,17 @@ hr {
   transition: background 250ms ease-in-out, transform 150ms ease;
 }
 
-#button:hover,
-#button:focus {
+#search-button:hover,
+#search-button:focus {
   background: #40b68f;
 }
 
-#button:focus {
+#search-button:focus {
   outline: 1px solid #fff;
   outline-offset: -4px;
 }
 
-#button:active {
+#search-button:active {
   transform: scale(0.99);
 }
 
@@ -199,7 +205,6 @@ hr {
   #box-main {
     padding: 0;
     margin: 0;
-    grid-template-columns: 1fr;
   }
 
   .card {
@@ -239,31 +244,38 @@ hr {
   .card {
     align-items: center;
     justify-items: center;
-    font-size: 0.9em;
+    width: 389px;
     padding: 10px;
     height: 1000px;
-    width: 400px;
+    margin: 5px;
+    margin-left: 3px;
   }
+  
   .box,
   .box2 {
     grid-column: none;
   }
 
+  .box {
+    border-radius: 2px;
+  }
+  
   .box2 {
     margin-left: 0;
-    width: 300px;
+    width: 280px;
     height: 400px;
   }
 
   .dat {
-    width: 345px;
+    width: 335px;
   }
 
   .box {
-    width: 365px;
+    width: 355px;
   }
 
   img {
     height: auto;
+    width: 300px;
   }
 }

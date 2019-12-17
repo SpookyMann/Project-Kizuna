@@ -1,3 +1,24 @@
+/**
+*gets the cached anime data api
+*/
+function getAnimeFromCache(coords) {
+  if (!('caches' in window)){
+    return null;
+  }
+  const url = `${window.location.origin}/anime/$coords`;
+  return caches.match(url)
+  .then((response) =>{
+    if (response) {
+      return response.json();
+    }
+    return null;
+  })
+  .catch((err) =>{
+    console.erroer('Error getting data from cache', err);
+    return null;
+  });
+}
+
 const url_base = "https://kitsu.io/api/edge/anime?filter[text]=";
 let fetchData = {
   Accept: "application/vnd.api+json",
@@ -5,7 +26,7 @@ let fetchData = {
 };
 
 getJSONData("little sister");
-document.getElementById("button").addEventListener("click", search);
+document.getElementById("search-button").addEventListener("click", search);
 
 function getJSONData(searchTerm) {
   console.log("getting " + searchTerm);
@@ -36,7 +57,7 @@ function getImageData(data) {
     //   "<img src='" +
     //   data.data[i].attributes.posterImage.small +
     //   "' alt=''><br>";
-    output += "<div class='dat'>" + "<h2 id='title'>";
+    output += "<div class='dat'>" + "<h2 class='title'>";
 
     var str = data.data[i].attributes.titles.en_jp;
     console.log(i + " value is " + str);
@@ -82,7 +103,7 @@ function getImageData(data) {
     output += "</h3>" + "</div>";
     output += "</div>";
     output += "<div class='box2'>";
-    output += "<div id='underline'>" + "<div class='box3'>" + "<h3 id='col'>";
+    output += "<div class='underline'>" + "<div class='box3'>" + "<h3 class='col'>";
 
     var str = data.data[i].attributes.averageRating;
     console.log(i + " value is " + str);
@@ -118,7 +139,7 @@ function getImageData(data) {
 }
 
 function search() {
-  let searchTerm = document.getElementById("input").value;
+  let searchTerm = document.getElementById("search-input").value;
   console.log("searching " + searchTerm);
   //perform search
   //update inner HTML of Foo
